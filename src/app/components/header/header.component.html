@@ -1,13 +1,17 @@
-<div class="bg-black py-2 px-3 text-right position-absolute w-100 menu-header">
-    <a href="https://es-la.facebook.com/enchulameelcabello/" target="_blank"><i class="fa text-white fa-facebook-f"></i></a>
-    <a href="https://instagram.com/enchulame.elcabello?igshid=1ic6as1e660d8" target="_blank"><i class="mx-4 fa text-white fa-instagram"></i></a>
-    <a href="https://web.whatsapp.com/send?phone=51989700127&text=Hola%2C%20vi%20su%20n%C3%BAmero%20de%20whatsapp%20en%20la%20web.%20Me%20podr%C3%ADan%20dar%20informaci%C3%B3n%20por%20favor" target="_blank"><i class="fa text-white fa-whatsapp"></i></a>
+<div class="bg-black shadow py-2 px-3 position-fixed w-100 menu-header">
+    <a href="javascript:void(0)" *ngIf="!notifyAlert" (click)="suscribe()" class="text-white small">
+        <i class="fa fa-bell"></i> ¡Recibir notificaciones de nuevos implementos!
+    </a>
+    <a href="javascript:void(0)" *ngIf="notifyAlert" (click)="unsuscribe()" class="text-white small">
+        <i class="fa fa-bell-slash"></i> ¡Dejar de recibir notificaciones!
+    </a>
 </div>
 
 <div class="menu-header d-flex align-items-center position-absolute mt-5 w-100 justify-content-center">
     <a routerLinkActive="activeRout" routerLink="/home" class="mx-4 text-white font-weight-bold">INICIO</a>
-    <a routerLinkActive="activeRout" routerLink="/product" class="mx-4 text-white font-weight-bold">PRODUCTOS</a>
-    <img src="assets/img/logo.png" class="mx-3" width="130px" alt="">
-    <a routerLinkActive="activeRout" routerLink="/about" class="mx-4 text-white font-weight-bold">NOSOTROS</a>
-    <a routerLinkActive="activeRout" routerLink="/contact" class="mx-4 text-white font-weight-bold">CONTÁCTANOS</a>
+    <a routerLinkActive="activeRout" routerLink="/resources" class="mx-4 text-white font-weight-bold">RECURSOS</a>
+    <img src="assets/img/virus.png" style="filter: invert(1);" class="mx-3" width="130px" alt="">
+    <a routerLinkActive="activeRout" routerLink="/register" class="mx-4 text-white text-center font-weight-bold">REGISTRAR
+        <br> RECURSO</a>
+    <a routerLinkActive="activeRout" routerLink="/contact" class="mx-4 text-white font-weight-bold">CONTACTO</a>
 </div>

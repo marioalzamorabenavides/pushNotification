@@ -1,1 +1,54 @@
-<p>about works!</p>
+<ngb-carousel [showNavigationArrows]="false" [showNavigationIndicators]="false">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="assets/img/banner1.jpeg" alt="Angular Carousel 1">
+        </div>
+        <div class="carousel-caption">
+            <h3>Registra tu recurso contra el covid</h3>
+            <p>
+                En esta sección podrás registrar recursos disponibles contra el Covid
+                (camas UCI, Oxigeno, Respiradores, etc).
+            </p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<div class="container py-5">
+    <h1 class="text-center font-weight-bold mb-5">Registra tu recurso</h1>
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="card card-body">
+                <form  [formGroup]="formRegister">
+                    <div class="mb-3">
+                        <label>Categoría</label>
+                        <select formControlName="categoria" class="form-control">
+                            <option value="Cama UCI">Cama UCI</option>
+                            <option value="Galon de Oxígeno">Galon de Oxígeno</option>
+                            <option value="Respirador">Respirador</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Cantidad</label>
+                        <input formControlName="cantidad" type="number" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Celular</label>
+                        <input formControlName="numero" type="number" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Distrito</label>
+                        <input formControlName="distrito" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Descripción</label>
+                        <textarea formControlName="descripcion" class="form-control" rows="4"></textarea>
+                    </div>
+                    <button type="button" (click)="saveResource()" class="btn btn-dark btn-block">Registrar</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-7" *ngIf="imgUrl!==''">
+            <img width="100%" [src]="imgUrl" alt="">
+        </div>
+    </div>
+</div>

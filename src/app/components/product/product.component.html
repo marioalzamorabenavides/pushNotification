@@ -1,1 +1,36 @@
-<p>product works!</p>
+<ngb-carousel [showNavigationArrows]="false" [showNavigationIndicators]="false">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="assets/img/banner1.jpeg" alt="Angular Carousel 1">
+        </div>
+        <div class="carousel-caption">
+            <h3>Recursos contra el Covid</h3>
+            <p>
+                En esta sección encontrar todos los recursos disponibles contra el Covid
+                (camas UCI, Oxigeno, Respiradores, etc).
+            </p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<div class="container py-5">
+    <h1 class="text-center font-weight-bold mb-5">Recursos</h1>
+        <div class="col-12 border shadow p-3 my-3" *ngFor="let data of arrResource">
+            <div class="row">
+                <div class="col-md-3">
+                    <img width="100%" height="170px" [src]="data?.imgUrl" alt="">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="font-weight-bold mb-0">{{data?.categoria}} ( <small>{{data?.cantidad}}</small> )</h4>
+                    <p class="mb-2 mt-0 text-muted">{{data?.distrito}}</p>
+                    <p class="mb-2 text-muted">Descripción: {{data?.descripcion}}</p>
+                    <p class="mb-0 text-muted">{{data?.registro}}</p>
+                </div>
+                <div class="col-12 text-right">
+                    <a target="_blank" [href]="linkwspMessage+data?.numero" class="btn btn-success">
+                        <i class="fa fa-whatsapp"></i> Contactar
+                    </a>
+                </div>
+            </div>
+        </div>
+</div>

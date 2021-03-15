@@ -1,0 +1,9 @@
+.picsum-img-wrapper img {
+    width           : 100%;
+    height          : 70vh;
+    filter: brightness(0.5)
+}
+
+ngb-carousel {
+    outline: none !important;
+}
